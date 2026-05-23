@@ -1,0 +1,37 @@
+--- a/scripts/whatsapp-bridge/bridge.js
++++ b/scripts/whatsapp-bridge/bridge.js
+@@ -273,14 +273,24 @@
+       // to arbitrary incoming messages (#8389).
+       if (!msg.key.fromMe) {
+         if (WHATSAPP_MODE === 'self-chat') {
+-          try {
+-            console.log(JSON.stringify({
+-              event: 'ignored',
+-              reason: 'self_chat_mode_rejects_non_self',
+-              chatId,
+-              senderId,
+-            }));
+-          } catch {}
+-          continue;
++          // "Message yourself" often arrives as !fromMe with matching chat/sender JIDs.
++          const myNumber = (sock.user?.id || '').replace(/:.*@/, '@').replace(/@.*/, '');
++          const myLid = (sock.user?.lid || '').replace(/:.*@/, '@').replace(/@.*/, '');
++          const chatNumber = chatId.replace(/@.*/, '');
++          const senderNumber = senderId.replace(/@.*/, '');
++          const isSelfDm = !isGroup && !chatId.includes('status') &&
++            ((myNumber && chatNumber === myNumber && senderNumber === myNumber) ||
++             (myLid && chatNumber === myLid && senderNumber === myLid));
++          if (!isSelfDm) {
++            try {
++              console.log(JSON.stringify({
++                event: 'ignored',
++                reason: 'self_chat_mode_rejects_non_self',
++                chatId,
++                senderId,
++              }));
++            } catch {}
++            continue;
++          }
+         } else if (!matchesAllowedUser(senderId, ALLOWED_USERS, SESSION_DIR)) {
+           try {
+             console.log(JSON.stringify({
