@@ -4,19 +4,19 @@ overview: One Hermes workspace with shared inbox/memory and four specialist mode
 todos:
   - id: shared-schema
     content: Add AGENTS.md, inbox/, store/, digests/, memory/paths.md and commitment schema; document capture conventions
-    status: pending
+    status: completed
   - id: life-core-skill
     content: Write skills/life-core + skills/loose-ends SKILL.md (classify, extract, review digest)
-    status: pending
+    status: completed
   - id: loose-ends-bundle
     content: Create hermes bundle /loose-ends; test on-demand in CLI and WhatsApp
-    status: pending
+    status: completed
   - id: evening-cron
     content: Configure hermes cron evening job with WhatsApp delivery + digest file write
-    status: pending
+    status: completed
   - id: stub-modes
     content: Add stub skills/bundles for /digest, /ops, /radar; update Plans/project-plan.md
-    status: pending
+    status: completed
 isProject: false
 ---
 

@@ -1,6 +1,8 @@
 # Workspace instructions
 
-Hermes should read files in this folder (and `memory/`, `tasks/`) when working in this workspace.
+Hermes loads **[AGENTS.md](../AGENTS.md)** automatically — that is the canonical workspace brain.
+
+This folder is optional human-readable notes. Skills live in `skills/` and are installed via `scripts/install-skills.sh`.
 
 ## Role
 

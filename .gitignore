@@ -3,3 +3,10 @@
 __pycache__/
 *.pyc
 
+# Personal captures and digests (keep structure via .gitkeep)
+inbox/*.md
+!inbox/README.md
+digests/*.md
+!digests/.gitkeep
+store/commitments.jsonl
+

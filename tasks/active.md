@@ -1,5 +1,5 @@
 # Active
 
-<!-- Add current priorities and open loops here. Hermes can update this file when you ask. -->
+Top priorities Hermes may mirror from `store/` when you mark something important.
 
-- (none yet — add your first priority when ready)
+- (add priorities here, or capture via WhatsApp: `note: …`)
