@@ -6,6 +6,7 @@
 | `configure-external-skills.sh` | Add repo `skills/` to `~/.hermes/config.yaml` `external_dirs` |
 | `setup-cron.sh` | Create `loose-ends-evening` job (20:00, WhatsApp, both skills) |
 | `patch-whatsapp-bridge.sh` | Fix self-chat inbound in Docker (applies `patches/whatsapp-bridge-selfchat.patch`) |
+| `setup-docker-gateway.sh` | Docker: `external_dirs`, `/workspace` cwd, channel prompts, cron workdir |
 
 **Note:** This Hermes install has no `hermes bundles` subcommand. Use `/loose-ends` plus cron `--skill life-core --skill loose-ends`, or `hermes chat -s life-core,loose-ends`.
 

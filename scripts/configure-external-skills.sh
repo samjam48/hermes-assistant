@@ -31,8 +31,10 @@ skills = data.setdefault("skills", {})
 dirs = skills.setdefault("external_dirs", [])
 if not isinstance(dirs, list):
     dirs = []
-if repo_skills not in dirs:
-    dirs.append(repo_skills)
+workspace_skills = "/workspace/skills"
+for path in (workspace_skills, repo_skills):
+    if path not in dirs:
+        dirs.append(path)
 skills["external_dirs"] = dirs
 
 config_path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False))
