@@ -1,0 +1,2 @@
+# Add Python dependencies here when you introduce scripts or automations.
+# Hermes itself is run via the Hermes CLI, not pip from this file.
